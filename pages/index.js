@@ -9,7 +9,7 @@ import TopNavBar from "../components/TopNavBar";
 import LeftPanel from "../components/LeftPanel";
 
 export default function Home({ data, doctor, appointments, files }) {
-  console.log(files);
+  console.log(doctor);
   const [leftPanel, setLeftPanel] = useState(false);
   return (
     <div>
@@ -20,7 +20,36 @@ export default function Home({ data, doctor, appointments, files }) {
       </Head>
 
       <main className="bg-[#f2f5fa]">
-        <div>{leftPanel ? <LeftPanel /> : null}</div>
+        <div>
+          {leftPanel ? (
+            <LeftPanel
+              doctorName={doctor.name}
+              doctorType={doctor.specification}
+            />
+          ) : null}
+        </div>
+
+        {leftPanel ? (
+          <div
+            onClick={() => setLeftPanel(!leftPanel)}
+            className="absolute top-5 left-48"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </div>
+        ) : null}
 
         <div>
           <TopNavBar
@@ -31,7 +60,7 @@ export default function Home({ data, doctor, appointments, files }) {
           <PatientList name={data.name} />
         </div>
 
-        <div className="grid gap-4 grid-cols-3 mx-8">
+        <div className="grid gap-4 md:grid-cols-3 grid-cols-1 mx-8 ">
           <div className="col-span-2 mt-4">
             <ProfileDetails data={data} />
           </div>
@@ -54,7 +83,7 @@ export async function getStaticProps() {
   ).then((res) => res.json());
 
   const doctor = await fetch(
-    "https://619f39821ac52a0017ba467e.mockapi.io/Files"
+    "https://619f39821ac52a0017ba467e.mockapi.io/DoctorDetails"
   ).then((res) => res.json());
 
   const AppointmentDetails = await fetch(
@@ -67,7 +96,7 @@ export async function getStaticProps() {
   return {
     props: {
       data: data[0],
-      doctor: doctor[1],
+      doctor: doctor[0],
       appointments: AppointmentDetails[0],
       files: Files[0],
     },

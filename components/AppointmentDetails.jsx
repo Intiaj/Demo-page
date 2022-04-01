@@ -79,9 +79,9 @@ function AppointmentDetails({ appointments }) {
         <div className="">
           <div>
             {selectUpcommingAppointments ? (
-              <div className="bg-white flex justify-around mx-4 py-4 my-4 shadow-md rounded">
+              <div className="bg-white flex justify-around md:mx-4 py-4 my-4 shadow-md rounded">
                 <div className="border-r">
-                  <p className="py-2 text-xl font-medium pr-4">
+                  <p className="py-2 md:text-xl font-medium md:pr-4">
                     {appointments["Upcoming Appointments"].Date}
                   </p>
                   <p className="text-xs text-gray-400 font-semibold">
@@ -92,7 +92,7 @@ function AppointmentDetails({ appointments }) {
                   <p className="text-xs font-semibold text-gray-400 pr-4 my-2">
                     Treatment
                   </p>
-                  <p className="font-bold text-xl">
+                  <p className="font-bold md:text-xl">
                     {appointments["Upcoming Appointments"].Treatment}
                   </p>
                 </div>
@@ -102,7 +102,7 @@ function AppointmentDetails({ appointments }) {
                       Dentist
                     </p>
 
-                    <p className="font-bold text-md">
+                    <p className="font-bold md:text-md">
                       {appointments["Upcoming Appointments"].Dentist}
                     </p>
                   </div>
@@ -137,20 +137,20 @@ function AppointmentDetails({ appointments }) {
                 </div>
               </div>
             ) : selectPastAppointments ? (
-              <div className="bg-white flex justify-around mx-4 py-4 my-4 shadow-md rounded">
+              <div className="bg-white flex justify-around md:mx-4 py-4 my-4 shadow-md rounded">
                 <div className="border-r">
-                  <p className="py-2 text-xl font-medium pr-4">
+                  <p className="py-2 md:text-xl font-medium md:pr-4">
                     {appointments["Post Appointment"].Date}
                   </p>
                   <p className="text-xs text-gray-400 font-semibold">
                     {appointments["Post Appointment"].Time}
                   </p>
                 </div>
-                <div className="border-r pr-4">
+                <div className="border-r md:pr-4">
                   <p className="text-xs font-semibold text-gray-400 pr-4 my-2">
                     Treatment
                   </p>
-                  <p className="font-bold text-xl">
+                  <p className="font-bold md:text-xl">
                     {appointments["Post Appointment"].Treatment}
                   </p>
                 </div>

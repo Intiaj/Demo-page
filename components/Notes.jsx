@@ -41,9 +41,7 @@ function Notes({ doctorName, createdAt }) {
           </div>
 
           <div>
-            <p className="font-normal text-sm text-gray-400">
-              {createdAt.slice(0, 9)}
-            </p>
+            <p className="font-normal text-sm text-gray-400">20 Nov 19</p>
           </div>
         </div>
       </div>
