@@ -1,1 +1,3 @@
-<a href='https://vercel.com/intiaj/krishworks-frontend-assignment'>https://vercel.com/intiaj/krishworks-frontend-assignment</a>
+<a href='krishworks-frontend-assignment.vercel.app
+'>krishworks-frontend-assignment.vercel.app
+</a>
