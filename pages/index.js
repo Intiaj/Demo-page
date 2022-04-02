@@ -9,7 +9,7 @@ import TopNavBar from "../components/TopNavBar";
 import LeftPanel from "../components/LeftPanel";
 
 export default function Home({ data, doctor, appointments, files }) {
-  console.log(doctor);
+ 
   const [leftPanel, setLeftPanel] = useState(false);
   return (
     <div>
